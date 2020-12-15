@@ -1,0 +1,131 @@
+
+@import '_variables.scss';
+@import 'mixins.scss';
+
+main{
+    width: 100%;
+    height: auto;
+    // background-color: #fdfdfd;
+    position: relative;
+}
+
+// -------------------------------------
+.sectionContent{
+    width: 90%;
+    height: auto;
+    margin: 30px auto;
+
+    @include MediaQuerie(desktop){
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       height: 80vh;
+    }
+
+
+    // subcontenedor 1 de sectionContent
+    &__subcontainer1{
+      width: 100%;
+      height: 350px;
+      
+      @include MediaQuerie(desktop){
+        margin-top: 60px;
+        width: 50%;
+      }
+    }
+
+    &__h1{
+        padding: 5px 7px;
+
+        @include MediaQuerie(tablet){
+            font-size: 2.3rem;
+            padding: 5px 11px;
+        }
+    }
+    &__parrafo{
+        padding: 15px 0;
+        width: 95%;
+        height: auto;
+        margin: 10px auto;
+
+        @include MediaQuerie(tablet){
+            font-size: 1.3rem;
+        }
+
+        @include MediaQuerie(desktop){
+            font-size: 1.2rem;
+        }
+    }
+    &__btn{
+        text-decoration: none;
+        color: white;
+        padding: 14px 10px;
+        background-color: $color1;
+        border-radius: 7px;
+        margin-left: 7px;
+        margin-top: 5px;
+        display: block;
+        width: 130px;
+        height: auto;
+        font-weight: bold;
+        text-align: center;
+
+        @include MediaQuerie(tablet){
+            margin-left: 11px;
+        }
+    }
+    // -------------------------------
+
+    // subcontenedor 2 de sectionContent
+    &__subcontainer2{
+        width: 100%;
+        height: 300px;
+        margin-top: 10px;
+        position: relative;
+        
+        @include MediaQuerie(desktop){
+            width: 50%;
+        }
+    }
+
+    &__img{
+        width: 100%;
+        transform: translateX(20px);
+        visibility: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in;
+        position: absolute;
+
+        @include MediaQuerie(tablet){
+            transform: translateX(140px);
+            width: 85%;
+        }
+        @include MediaQuerie(desktop){
+            transform: translateX(60px);
+            width: 100%;
+        }
+    }
+
+    &__subcontainer3{
+        width: 100%;
+        height: 60px;
+        
+
+        @include MediaQuerie(tablet){
+            margin-top: 180px;
+        }
+        @include MediaQuerie(desktop){
+            margin-top: 150px;
+        }
+    }
+
+    &__social{
+        margin: 5px;
+        cursor: pointer;
+    }
+}
+
+.active-slide{
+    visibility: visible;
+    opacity: 1;
+}
